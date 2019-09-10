@@ -11,10 +11,10 @@ import scrapy
 class MediumScrapItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    nameOfPublication = scrapy.Field()
     nameOfAuthor = scrapy.Field()
     linkOfAuthorProfile = scrapy.Field()
-    article = scrapy.Field()
+    articleTitle = scrapy.Field()
     articleLink = scrapy.Field()
     postingTime = scrapy.Field()
-    recommendation = scrapy.Field()
     pass
