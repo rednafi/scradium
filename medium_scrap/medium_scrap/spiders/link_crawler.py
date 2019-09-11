@@ -34,8 +34,8 @@ class StoriesSpider(scrapy.Spider):
         for story in response.css("div.postArticle"):
             yield {
                 "nameOfPublication": story.css(
-                    "div.u-paddingTop18.u-paddingBottom35 div.u-fontSize18.u-lineHeightTight div::text"
-                ).get(),
+                    "a.ds-link::text"
+                ).getall()[-1],
                 "nameOfAuthor": story.css("a.ds-link::text").get(),
                 "linkOfAuthorProfile": story.css("a::attr(href)").get(),
                 "articleTitle": story.css(
