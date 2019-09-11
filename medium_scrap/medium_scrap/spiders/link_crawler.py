@@ -3,6 +3,7 @@ import scrapy
 from tqdm import tqdm
 from .sources import BASE_URLS, YEAR_RANGE, MONTH_RANGE
 
+
 class LinkAgg:
     def __init__(self):
         self.base_urls = BASE_URLS
@@ -33,9 +34,7 @@ class StoriesSpider(scrapy.Spider):
     def parse(self, response):
         for story in response.css("div.postArticle"):
             yield {
-                "nameOfPublication": story.css(
-                    "a.ds-link::text"
-                ).getall()[-1],
+                "nameOfPublication": story.css("a.ds-link::text").getall()[-1],
                 "nameOfAuthor": story.css("a.ds-link::text").get(),
                 "linkOfAuthorProfile": story.css("a::attr(href)").get(),
                 "articleTitle": story.css(
