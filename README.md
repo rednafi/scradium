@@ -31,7 +31,7 @@ Collect all the links of the articles and store them in a local mongo database.
   - **Collection Name:** `mediumLinks`
   - **Document Format:** 
 
-    ```jsonl
+    ```json
     {'articleLink': 'https://medium.com/center-for-data-science/guitar-set-a-new-dataset-for-music-information-retrieval-41b7861a87d7?source=collection_archive---------0-----------------------',
     'articleTitle': 'Guitar-Set, a New Dataset for Music Information Retrieval',
     'linkOfAuthorProfile': 'https://medium.com/@NYUDataScience',
