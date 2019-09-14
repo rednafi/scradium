@@ -47,9 +47,9 @@ class StoriesSpider(scrapy.Spider):
     def parse(self, response):
 
         yield {
-            "nameOfPublication": "",
-            "nameOfAuthor": response.css("a::text").getall()[-8],
-            "articleTile": response.css("div.a.b.c  h1::text").getall(),
+            "nameOfPublication": response.css("div.ab.af.ag h2 > a::text").getall()[-1],
+            "nameOfAuthor": response.css("div.ab.af.ag h2 > a::text").getall()[-2],
+            "articleTile": response.css("title::text").get(),
             "content": response.css("p::text").getall(),
-            "postingTime": ""
+            "postingTime": response.css("div.ag.af a.text"),
         }
