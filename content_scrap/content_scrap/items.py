@@ -11,5 +11,8 @@ import scrapy
 class ContentScrapItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    content = scrapy.Field()
-    pass
+    nameOfPublication = scrapy.Field()
+    nameOfAuthor = scrapy.Field()
+    articleTile = scrapy.Field()
+    articleContent = scrapy.Field()
+    postingTime = scrapy.Field()

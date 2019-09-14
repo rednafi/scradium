@@ -1,7 +1,8 @@
 # stories_spider.py
 import scrapy
 from tqdm import tqdm
-#from .sources import BASE_URLS, YEAR_RANGE, MONTH_RANGE
+
+# from .sources import BASE_URLS, YEAR_RANGE, MONTH_RANGE
 import pymongo
 import pandas as pd
 
@@ -29,7 +30,7 @@ class LinkAgg:
 
         # return self.pubname_list, self.authorname_list, self.authorprofile_list, self.articletitle_list, self.articlelink_list, self.postingtime_list
         return self.articlelink_list
-        
+
 
 class StoriesSpider(scrapy.Spider):
     name = "contents"
@@ -44,8 +45,11 @@ class StoriesSpider(scrapy.Spider):
 
     # For All Stories
     def parse(self, response):
-        for story in response:
-            yield {
-                "nameOfPublication": story.css("p::text").getall(),
-              
-            }
+
+        yield {
+            "nameOfPublication": "",
+            "nameOfAuthor": response.css("a::text").getall()[-8],
+            "articleTile": response.css("div.a.b.c  h1::text").getall(),
+            "content": response.css("p::text").getall(),
+            "postingTime": ""
+        }
