@@ -37,7 +37,6 @@ Collect all the links of the articles and store them in a local mongo database.
 	"articleTitle" : "Guitar-Set, a New Dataset for Music Information Retrieval",
 	"articleLink" : "https://medium.com/center-for-data-science/guitar-set-a-new-dataset-for-music-information-retrieval-41b7861a87d7?source=collection_archive---------0-----------------------"
 }
-    ```
 
 ### content_scrap
 Collects the contents of the links aggregated via the `link_scrap` bot
@@ -47,7 +46,7 @@ Collects the contents of the links aggregated via the `link_scrap` bot
 
 ### Run the Bots
 
-1. `link_scrap`:
+#### `link_scrap`
 To run the first bot,
     * Install `mongodb`
     * Run the local `mongo` server
@@ -62,7 +61,7 @@ To run the first bot,
         > db.mediumLinks.countDocuments({})
         ```
 
-2. `content_scrap`:
+#### `content_scrap`
 To run the second bot, 
    * Keep your `mongo` server running
    * cd to `content_scrap`
