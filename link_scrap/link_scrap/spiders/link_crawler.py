@@ -39,5 +39,5 @@ class StoriesSpider(scrapy.Spider):
                 ).get(),
                 "articleLink": story.css(
                     "div.postArticle-readMore a::attr(href)"
-                ).get()
+                ).get(),
             }

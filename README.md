@@ -32,12 +32,12 @@ Collect all the links of the articles and store them in a local mongo database.
   - **Document Format:** 
 
     ```js
-    {'articleLink': 'https://medium.com/center-for-data-science/guitar-set-a-new-dataset-for-music-information-retrieval-41b7861a87d7?source=collection_archive---------0-----------------------',
-    'articleTitle': 'Guitar-Set, a New Dataset for Music Information Retrieval',
-    'linkOfAuthorProfile': 'https://medium.com/@NYUDataScience',
-    'nameOfAuthor': 'NYU Center for Data Science',
-    'nameOfPublication': 'Center for Data Science',
-    'postingTime': '2018-01-26T15:39:31.691Z'}
+    {
+	"_id" : ObjectId("5d7df79048b3c66d77c86fe3"),
+	"articleTitle" : "Guitar-Set, a New Dataset for Music Information Retrieval",
+	"articleLink" : "https://medium.com/center-for-data-science/guitar-set-a-new-dataset-for-music-information-retrieval-41b7861a87d7?source=collection_archive---------0-----------------------"
+}
+    ```
 
 ### content_scrap
 Collects the contents of the links aggregated via the `link_scrap` bot

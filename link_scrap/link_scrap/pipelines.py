@@ -8,6 +8,7 @@ import pymongo
 from scrapy.exceptions import DropItem
 import json
 
+
 class LinkScrapPipeline(object):
     def process_item(self, item, spider):
         return item
