@@ -49,15 +49,30 @@ Collects the contents of the links aggregated via the `link_scrap` bot
 
 1. `link_scrap`:
 To run the first bot,
-    * Install mongodb
-    * Run the local mongo server
+    * Install `mongodb`
+    * Run the local `mongo` server
     * `cd` to `link_scrap` directory
     * Run 
       ```
       $ scrapy crawl links
       ```
-    * You should see a `links.json` file in your current directory and the documents in `mediumLinks` collection inside `mediumCrawl` database
+    * You should see a `links.jl` file in your current directory and the documents in `mediumLinks` collection inside `mediumCrawl` database
     * You can count the number of documents saved in your local mongo database via running the following command in your `mongo shell`:
         ```
         > db.mediumLinks.countDocuments({})
+        ```
+
+2. `content_scrap`:
+To run the second bot, 
+   * Keep your `mongo` server running
+   * cd to `content_scrap`
+   * run 
+      ```
+      scrapy crawl contents
+      ``` 
+    * You should a `contnets.jl` file in your current directory and the documents in `mediumContents` collection inside `mediumCrawl` database
+
+    * You can count the number of documents saved in your local mongo database via running the following command in your `mongo shell`:
+        ```
+        > db.mediumContents.countDocuments({})
         ```
