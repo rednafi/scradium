@@ -20,15 +20,7 @@ class LinkAgg:
         self.df = pd.DataFrame(data)
 
     def get_links(self):
-        # retrieve data
-        # self.pubname_list = self.df['nameOfPublication'].tolist()
-        # self.authorname_list = self.df['nameOfAuthor'].tolist()
-        # self.authorprofile_list = self.df['linkOfAuthorProfile'].tolist()
-        # self.articletitle_list = self.df['articleTitle'].tolist()
         self.articlelink_list = self.df["articleLink"].tolist()
-        # self.postingtime_list = self.df['postingTime'].tolist()
-
-        # return self.pubname_list, self.authorname_list, self.authorprofile_list, self.articletitle_list, self.articlelink_list, self.postingtime_list
         return self.articlelink_list
 
 

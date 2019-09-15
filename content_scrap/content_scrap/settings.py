@@ -64,9 +64,14 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'content_scrap.pipelines.ContentScrapPipeline': 300,
-# }
+ITEM_PIPELINES = {
+    "content_scrap.pipelines.JsonWriterPipeline": 300,
+    "content_scrap.pipelines.MongoPipeline": 600
+}
+
+MONGO_URI = "mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb"
+MONGO_DATABASE = "mediumCrawl"
+MONGODB_COLLECTION = "mediumContents"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
