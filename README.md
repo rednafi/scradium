@@ -45,7 +45,19 @@ Collects the contents of the links aggregated via the `link_scrap` bot
 
 
 ### Run the Bots
+* Create and activate a virtual environment, via
 
+  ```
+  $ python3 -m venv venv
+  $ source venv/bin/activate
+  ```
+
+* Install the requirements via
+
+  ```
+  pip install -r requirements.txt
+  ```
+  
 #### 1. `link_scrap`
 To run the first bot,
 
