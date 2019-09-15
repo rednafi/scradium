@@ -66,7 +66,7 @@ ROBOTSTXT_OBEY = False
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     "content_scrap.pipelines.JsonWriterPipeline": 300,
-    "content_scrap.pipelines.MongoPipeline": 600
+    "content_scrap.pipelines.MongoPipeline": 600,
 }
 
 MONGO_URI = "mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb"

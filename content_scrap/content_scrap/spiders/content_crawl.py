@@ -43,5 +43,4 @@ class StoriesSpider(scrapy.Spider):
             "nameOfAuthor": response.css("div.ab.af.ag h2 > a::text").getall()[-2],
             "articleTile": response.css("title::text").get(),
             "content": response.css("p::text").getall(),
-            "postingTime": response.css("div.ag.af a.text"),
-        }
+            "postingTime": response.css()}
