@@ -40,10 +40,6 @@ Collect all the links of the articles and store them in a local mongo database.
 	"articleTitle" : "Guitar-Set, a New Dataset for Music Information Retrieval",
 	"articleLink" : "https://medium.com/center-for-data-science/guitar-set-a-new-dataset-for-music-information-retrieval-41b7861a87d7?source=collection_archive---------0-----------------------"
 }
-### Quirks
-* In the default settings, the bots will only collect 2018-2019, January - March data
-
-* To increase data collection range or add new sources, add them in the in `link_scrap/link_scrap/spiders/sources.py` file
 
 ### content_scrap
 Collects the contents of the links aggregated via the `link_scrap` bot
@@ -121,6 +117,10 @@ To run the second bot,
       ```
       db.mediumContents.findOne()
       ```
+### Quirks
+* In the default settings, the bots will only collect 2018-2019, January - March data
+
+* To increase data collection range or add new sources, add them in the in `link_scrap/link_scrap/spiders/sources.py` file
 
 ## Issues
 
