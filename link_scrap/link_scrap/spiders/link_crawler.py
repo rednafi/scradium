@@ -34,14 +34,10 @@ class StoriesSpider(scrapy.Spider):
     def parse(self, response):
         for story in response.css("div.postArticle"):
             yield {
-                "nameOfPublication": story.css("a.ds-link::text").getall()[-1],
-                "nameOfAuthor": story.css("a.ds-link::text").get(),
-                "linkOfAuthorProfile": story.css("a::attr(href)").get(),
                 "articleTitle": story.css(
                     "div.postArticle-content section div.section-content div h3::text"
                 ).get(),
                 "articleLink": story.css(
                     "div.postArticle-readMore a::attr(href)"
-                ).get(),
-                "postingTime": story.css("time::attr(datetime)").get(),
+                ).get()
             }
