@@ -25,7 +25,7 @@ class LinkAgg:
 
 
 class StoriesSpider(scrapy.Spider):
-    name = "contents"
+    name = "content_scrap"
 
     def start_requests(self):
         agg = LinkAgg()

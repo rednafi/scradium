@@ -22,7 +22,7 @@ class LinkAgg:
 
 
 class StoriesSpider(scrapy.Spider):
-    name = "links"
+    name = "link_scrap"
 
     def start_requests(self):
         urls = LinkAgg().get_links()

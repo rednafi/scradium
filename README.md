@@ -41,7 +41,23 @@ Collect all the links of the articles and store them in a local mongo database.
 ### content_scrap
 Collects the contents of the links aggregated via the `link_scrap` bot
 
-* 
+**Running the `link_scrap` bot will:**
+
+Collect the desired contents of the articles from the links (aggregated by `link_scrap` bot and stored inside `mediumLinks` collection ) and store them in a local mongo database.
+
+  - **Database Name:** `mediumCrawl`
+  - **Collection Name:** `mediumContents`
+  - **Document Format:** 
+
+    ```js
+    {'articleTile': 'NYU researchers invent new real-time data analysis system for '
+                'humanitarian agencies',
+    'content': ['How can we tame the dragon', 'What is coming in future... '],
+    'nameOfAuthor': 'NYU Center for Data Science',
+    'nameOfPublication': 'Center for Data Science',
+    'postingTime': '2018-01-24T15:19:52.202Z'}
+    ```
+
 
 
 ### Run the Bots
@@ -57,7 +73,7 @@ Collects the contents of the links aggregated via the `link_scrap` bot
   ```
   pip install -r requirements.txt
   ```
-  
+
 #### 1. `link_scrap`
 To run the first bot,
 
@@ -69,7 +85,7 @@ To run the first bot,
 
   * Run 
     ```
-    $ scrapy crawl links
+    $ scrapy crawl link_scrap
     ```
   * You should see a `links.jl` file in your current directory and the documents in `mediumLinks` collection inside `mediumCrawl` database
 
@@ -85,9 +101,9 @@ To run the second bot,
   * `cd` to `content_scrap`
   * Run 
     ```
-    $ scrapy crawl contents
+    $ scrapy crawl content_scrap
     ``` 
-  * You should a `contnets.jl` file in your current directory and the documents in `mediumContents` collection inside `mediumCrawl` database
+  * You should a `contents.jl` file in your current directory and the documents in `mediumContents` collection inside `mediumCrawl` database
 
   * You can count the number of documents saved in your local mongo database via running the following command in your `mongo shell`:
       ```
@@ -98,3 +114,7 @@ To run the second bot,
       ```
       db.mediumContents.findOne()
       ```
+
+## Issues
+
+* Article title (collected by `link_scrap`) scraping is not perfect, there are a lot of null values for article title here and there (this is not a big deal since we are collecting the titles again while running the `content_scrap` bot ) 
