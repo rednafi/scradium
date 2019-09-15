@@ -64,15 +64,15 @@ To run the first bot,
 
 #### `content_scrap`
 To run the second bot, 
-   * Keep your `mongo` server running
-   * cd to `content_scrap`
-   * run 
-      ```
-      scrapy crawl contents
-      ``` 
-    * You should a `contnets.jl` file in your current directory and the documents in `mediumContents` collection inside `mediumCrawl` database
+  * Keep your `mongo` server running
+  * cd to `content_scrap`
+  * run 
+    ```
+    scrapy crawl contents
+    ``` 
+  * You should a `contnets.jl` file in your current directory and the documents in `mediumContents` collection inside `mediumCrawl` database
 
-    * You can count the number of documents saved in your local mongo database via running the following command in your `mongo shell`:
-        ```
-        > db.mediumContents.countDocuments({})
-        ```
+  * You can count the number of documents saved in your local mongo database via running the following command in your `mongo shell`:
+      ```
+      > db.mediumContents.countDocuments({})
+      ```
