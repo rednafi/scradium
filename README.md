@@ -64,14 +64,8 @@ Collect the desired contents of the articles from the links (aggregated by `link
 
 
 ### Run the Bots
-* Create and activate a virtual environment, via
 
-  ```
-  $ python3 -m venv venv
-  $ source venv/bin/activate
-  ```
-
-* Install the requirements via
+* Create a python virtual environment and install the requirements via
 
   ```
   pip install -r requirements.txt
